@@ -1,48 +1,69 @@
 var test = require('tape');
 var logic = require('./logic.js');
-arr=[{
+arr1 = [{
   id: 0,
   description: 'smash avocados',
   done: false,
 }
 ]
 
+arr2=[{
+  id: 0,
+  description: 'smash avocados',
+  done: false,
+}, {
+  id: 1,
+  description: 'gym',
+  done: false,
+}];
 
-test('Example test', function(t) {
-  t.pass();
-  var actual=logic.addTodo(arr,'gym');
-  var expected= [{
+
+test('addTodo Output', function (t) {
+  var actual = logic.addTodo(arr1, 'gym');
+  var expected = [{
     id: 0,
     description: 'smash avocados',
     done: false,
-  },{id: 1,
+  }, {
+    id: 1,
     description: 'gym',
     done: false,
   }];
-  t.deepEqual(actual,expected,'check if add function works ');
+
+  t.deepEqual(actual, expected, 'check if add function works ');
   t.end();
 });
 
 
 
-test('delete example test', function(t) {
-  t.pass();
-  var actual=logic.deleteTodo(arr,0);
-  var expected=[];
-  t.deepEqual(actual,expected,'delete function ');
+test('deleteTodo Output', function (t) {
+  var actual = logic.deleteTodo(arr2,0);
+  var expected = [{
+    id: 1,
+    description: 'gym',
+    done: false,
+  }];
+
+  t.deepEqual(actual, expected, 'check if delete function works ');
   t.end();
 });
 
-  test('markTodo Output', function (t) {
-    var actual = logic.markTodo(arr,0);
-    var expected = [{
+
+
+test('markTodo Output', function (t) {
+  var actual = logic.markTodo(arr2,0);
+  var expected = [{
     id: 0,
     description: 'smash avocados',
     done: true,
-    }];
-    
-    
-    t.deepEqual(actual, expected, 'check if mark function works ');
-    t.end();
-    });
-    
+  }, {
+    id: 1,
+    description: 'gym',
+    done: false,
+  }];
+
+
+  t.deepEqual(actual, expected, 'check if mark function works ');
+  t.end();
+});
+

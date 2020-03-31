@@ -1,20 +1,89 @@
-.body {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-areas: "Header Header Header"
-"Containter Containter Containter"
-"Containter Containter Containter"
+.mainBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
+    grid-template-areas: "Header Header Header"
+                        "Left Containter Right"
+                        "Left Containter Right"
+                        "Left Containter Right";
 
-}
+
+                        
+    grid-gap: 10px;
+    margin: auto;
+    height: 100vh;
+    width: 90vw;
+    background: lightgray;
+    user-select: none;
+    }
 
 
-.Header {
-
-    grid-area:Header ;
-
-}
+    .Header {
+        grid-area: Header;  
+        align-self: center;
+        justify-self: center;
+        vertical-align: middle;
+        font-family: Georgia;
+        color: brown;
+        font-size: 35px;
+        user-select: none;
+        padding-top: 40px;
+    
+    }
+    
 
 
 #todo-container {
-    grid-row: Containter;
+    grid-area: Containter;
+    height: fit-content;
+    width: 20vw;
+    height: 88vh;
+    background: red;
+    color: aliceblue;
+    font-style: oblique;
+    font-size: 20px;
+    justify-self: center;
+    font-weight: bold;
+    user-select: none;
+    border-radius:50px;
+}
+
+
+.Right-Side {
+    grid-area: Right;
+    height: fit-content;
+    width: 40%;
+    height: 80vh;
+    background:lightgray;
+    color: aliceblue;
+    user-select: none;
+    border-style: dashed;
+    padding-left: 30px;
+    justify-self: center;
+    
+}
+
+
+.Left-Side {
+    grid-area: Left;
+    height: fit-content;
+    width: 40%;
+    height: 80vh;
+    background: lightgray;
+    color: aliceblue;
+    justify-self: center;
+    user-select: none;
+    border-style: dashed;
+    padding-left: 30px;
+    
+}
+#AnimalLabel {
+    padding-left: 45px;
+} 
+
+#Animalinput {
+    margin-left: 25px;
+    margin-top: 10px;
+    width: 220px;
+
 }
