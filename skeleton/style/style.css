@@ -1,1 +1,20 @@
+.body {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-areas: "Header Header Header"
+"Containter Containter Containter"
+"Containter Containter Containter"
 
+}
+
+
+.Header {
+
+    grid-area:Header ;
+
+}
+
+
+#todo-container {
+    grid-row: Containter;
+}
