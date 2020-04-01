@@ -32,18 +32,18 @@
 
     var markTodo=document.createElement('INPUT');
     markTodo.setAttribute("type", "checkbox");
+  
 
 
     markTodo.addEventListener('click', function(event) {
-    var newState = todoFunctions.markTodo(state, todo.id);
-    update(newState)
+    // var newState = todoFunctions.markTodo(state, todo.id);
+    update(newState);
+    console.log(newState);
 
  });
   todoNode.appendChild(markTodo);
 
-    // add markTodo button
 
-    // add classes for css
   return todoNode;
 
 }
