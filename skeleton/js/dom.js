@@ -3,21 +3,22 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
   // This is the dom node where we will keep our todo
-  var container = document.getElementById('todo-container');
+  var container = document.getElementById('SubContainer');
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo',done:false},
-    { id: -2, description: 'second todo',done:false },
-    { id: -1, description: 'third todo',done:false },
+    { id: -3, description: 'Lion',done:false},
+    { id: -2, description: 'Elephant',done:false },
+    { id: -1, description: 'Panda',done:false },
+    { id: 0, description: 'Griaffe',done:false },
+    { id: 1, description: 'Tiger',done:false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
     todoNode.textContent =todo.description;
-    console.log(todoNode.textContent);
-    // you will need to use addEventListener
+
     
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
@@ -31,21 +32,18 @@
 
     var markTodo=document.createElement('INPUT');
     markTodo.setAttribute("type", "checkbox");
-    //markTodo.attributes('id','checkbox')
+  
+
 
     markTodo.addEventListener('click', function(event) {
-
     var newState = todoFunctions.markTodo(state, todo.id);
-    markTodo.setAttribute("type", "checkbox");
-
-    update(newState)
+    update(newState);
+    console.log(newState);
 
  });
   todoNode.appendChild(markTodo);
 
-    // add markTodo button
 
-    // add classes for css
   return todoNode;
 
 }
@@ -53,7 +51,7 @@
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       event.preventDefault();
-      var inPut=document.getElementById('inputid').value;
+      var inPut=document.getElementById('Animalinput').value;
       var newState=todoFunctions.addTodo(state,inPut);
       console.log(newState);
       update(newState);

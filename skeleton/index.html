@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>ZOOVISIT</title>
-    <link rel="stylesheet" href="./style/style.css">
-    
-  </head>
-  <body>
 
-    <h>WELCOME to ZOOVISIT</h>
-    <div id = "todo-container">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./style/style.css">
+
+</head>
+
+<body>
+
+  <div class="mainBody">
+    <div class="Header">
+
+      ZooVisit
+
     </div>
-    <form id="add-todo">
-      <input type="text" id="inputid" name="description" value="">
-      <input type="submit" name="" value="Submit">
- <!--- <span onclick="newElement()" class="addBtn">Add</span>!--->
+    <div id="todo-container">
+      <p>My visiting List</p>
+      <hr>
+      <hr>
+      <form id="add-todo">
+        <label id="AnimalLabel"> Please type your animals
+        </label>
+        <input id="Animalinput" type="text"size=25; name="description" value="" placeholder="Please enter your visited animal">
+        <input type="submit" name="" value="Add" id="AddButton">
 
-    </form>
-  </body>
-  <script type="text/javascript" src = "./js/logic.js"></script>
-  <script type="text/javascript" src = "./js/dom.js"></script>
+        <div id="SubContainer">
+
+        </div>
+
+      </form>
+    </div>
+
+    <div class="Left-Side">
+      <img src="./images/Zoo.png"> </img>
+      <img src="./images/Zoo3.png"> </img>
+
+
+    </div>
+
+    <div class="Right-Side">
+      <img src="./images/Zoo2.png"> </img>
+      <img src="./images/Zoo4.png"> </img>
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+</body>
+
+
+
+
+<script type="text/javascript" src="./js/logic.js"></script>
+<script type="text/javascript" src="./js/dom.js"></script>
+
+
+
+
+
+
+
+
 </html>
