@@ -67,3 +67,21 @@ test('markTodo Output', function (t) {
   t.end();
 });
 
+
+
+test('sort Output', function (t) {
+  var actual = logic.sortTodos(arr2,0);
+  var expected = [{
+    id: 0,
+    description: 'smash avocados',
+    done: false,
+  }, {
+    id: 1,
+    description: 'gym',
+    done: false,
+  }];
+
+
+  t.deepEqual(actual, expected, 'check if sort function works ');
+  t.end();
+});

@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "test": "tape ./js/test.js | tap-spec "
-=======
    "test": "tape ./js/test.js | tap-spec"
->>>>>>> a970e0145c17c383c7120a21793c9d4fb9754d03
   },
   "author": "",
   "license": "ISC",

@@ -7,44 +7,52 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'first todo',done:false},
+    { id: -2, description: 'second todo',done:false },
+    { id: -1, description: 'third todo',done:false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
+    todoNode.textContent =todo.description;
+    console.log(todoNode.textContent);
     // you will need to use addEventListener
-
-    // add span holding description
-
+    
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.innerText='delete'; 
+
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
 
+    var markTodo=document.createElement('INPUT');
+    markTodo.setAttribute("type", "checkbox");
+    //markTodo.attributes('id','checkbox')
+
+    markTodo.addEventListener('click', function(event) {
+    var newState = todoFunctions.markButton(state, todo.id);
+    update(newState)
+
+ });
+  todoNode.appendChild(markTodo);
+
     // add markTodo button
 
     // add classes for css
+  return todoNode;
 
-    return todoNode;
-  };
-
+}
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
-      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
-      // what is inside event.target?
-
-      var description = '?'; // event.target ....
-
-      // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      event.preventDefault();
+      var inPut=document.getElementById('inputid').value;
+      var newState=todoFunctions.addTodo(state,inPut);
+      console.log(newState);
       update(newState);
     });
   }
