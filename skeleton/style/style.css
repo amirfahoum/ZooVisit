@@ -43,6 +43,7 @@
     font-weight: bold;
     user-select: none;
     border-radius:50px;
+    
 }
 
 
@@ -103,12 +104,13 @@ button {
     transition: all 0.3s ease 0s;
     margin-top: 20px;
     margin-left: 10px;
+    font-family: Georgia;
 
     
 }
 
 button:hover {
-    color: #494949 !important;
+    color: turquoise !important;
     border-radius: 50px;
     border-color: turquoise !important;
     transition: all 0.3s ease 0s;
@@ -128,9 +130,6 @@ input[type="checkbox"]{
   padding: 10px;
   margin-left: 20px;
 }
-
-
-
 
 
 ul li.checked {
