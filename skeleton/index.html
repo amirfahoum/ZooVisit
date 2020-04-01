@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>tdd todo</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <script type="text/javascript" src = "./js/logic.js"></script>
-    <script type="text/javascript" src = "./js/dom.js"></script>
 
-  </head>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./style/style.css">
 
+</head>
 
-  <body>
+<body>
 
-    <div class="mainBody">
+  <div class="mainBody">
+    <div class="Header">
 
+      ZooVisit
 
+    </div>
+    <div id="todo-container">
+      <p style="padding-left:90px">My visiting List</p>
+      <hr>
+      <hr>
+      <form id="add-todo">
+        <label id="AnimalLabel"> Please type your animals
+        </label>
+        <input id="Animalinput" type="text" name="description" value="" placeholder="Please enter your visited animal">
+        <input type="submit" name="" value="Add" id="AddButton">
 
-      <div class ="Header">
+        <div id="SubContainer">
 
-        ZooVisit
+        </div>
 
-      </div>
-      <div id = "todo-container">
-        <p style="padding-left:90px">My visiting List</p>
-        <hr>
-        <hr>
-          <form id="add-todo">
-            <label id = "AnimalLabel"> Please type your animals 
-            </label>
-            <input id = "Animalinput" type="text" name="description" value="" placeholder="Please enter your visited animal">
-            <button>Add</button>
-          </form>
-      </div>
+      </form>
+    </div>
 
-      <div class= "Left-Side">
-
-
-      </div>
-
-      <div class= "Right-Side">
-
-
-      </div>
-
-      
-
+    <div class="Left-Side">
+      <img src="/images/Zoo.png"> </img>
 
 
     </div>
-  </body>
+
+    <div class="Right-Side">
+      <img src="/images/Zoo2.png"> </img>
 
 
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+</body>
+
+
+
+
+
+<script type="text/javascript" src="./js/logic.js"></script>
+<script type="text/javascript" src="./js/dom.js"></script>
 
 
 
