@@ -34,7 +34,10 @@
     //markTodo.attributes('id','checkbox')
 
     markTodo.addEventListener('click', function(event) {
-    var newState = todoFunctions.markButton(state, todo.id);
+
+    var newState = todoFunctions.markTodo(state, todo.id);
+    markTodo.setAttribute("type", "checkbox");
+
     update(newState)
 
  });
