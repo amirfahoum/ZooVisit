@@ -11,6 +11,7 @@
     { id: -2, description: 'Elephant',done:false },
     { id: -1, description: 'Panda',done:false },
     { id: 0, description: 'Griaffe',done:false },,
+
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -19,7 +20,9 @@
     todoNode.textContent =todo.description;
 
     
+
     // Delete Button 
+
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.innerText='delete'; 
 
@@ -49,10 +52,14 @@
   todoNode.appendChild(markTodo);
 
 
+
   return todoNode;
 
 }
+
   // Add Function
+
+  // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       event.preventDefault();
