@@ -25,19 +25,19 @@
         font-size: 35px;
         user-select: none;
         padding-top: 40px;
+        padding-left: 30px;
    
     }
     
 
-
 #todo-container {
     grid-area: Containter;
     height: fit-content;
-    width: 20vw;
+    width: 22vw;
     height: 88vh;
     background: salmon;
     color: aliceblue;
-    font-size: 20px;
+    font-size: 25px;
     justify-self: center;
     font-weight: bold;
     user-select: none;
@@ -90,11 +90,11 @@ p {
 
 
 #AnimalLabel {
-    padding-left: 45px;
+    padding-left: 40px;
 } 
 
 #Animalinput {
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 10px;
     
 }

@@ -57,6 +57,7 @@
 
 }
 
+
   // Add Function
 
   // bind create todo form
@@ -67,9 +68,10 @@
       if (inPut != "") {
         var newState=todoFunctions.addTodo(state,inPut);
         update(newState);
+        clearBox('Animalinput');
       }
     });
-  }
+}
 
   // you should not need to change this function
   var update = function(newState) {
@@ -91,3 +93,11 @@
 
   if (container) renderState(state);
 })();
+
+
+
+function clearBox(elementID) {
+
+  document.getElementById(elementID).value ="";
+}
+
