@@ -10,8 +10,7 @@
     { id: -3, description: 'Lion',done:false},
     { id: -2, description: 'Elephant',done:false },
     { id: -1, description: 'Panda',done:false },
-    { id: 0, description: 'Griaffe',done:false },
-    { id: 1, description: 'Tiger',done:false },
+    { id: 0, description: 'Griaffe',done:false },,
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -20,7 +19,7 @@
     todoNode.textContent =todo.description;
 
     
-    // this adds the delete button
+    // Delete Button 
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.innerText='delete'; 
 
@@ -30,13 +29,19 @@
     });
     todoNode.appendChild(deleteButtonNode);
 
+    //MarkFunction
+
     var markTodo=document.createElement('INPUT');
     markTodo.setAttribute("type", "checkbox");
   
-
+    if (todo.done) {
+      markTodo.checked=true;
+    }
 
     markTodo.addEventListener('click', function(event) {
-    // var newState = todoFunctions.markTodo(state, todo.id);
+      
+    var newState = todoFunctions.markTodo(state, todo.id);
+    
     update(newState);
     console.log(newState);
 
@@ -47,14 +52,15 @@
   return todoNode;
 
 }
-  // bind create todo form
+  // Add Function
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       event.preventDefault();
       var inPut=document.getElementById('Animalinput').value;
-      var newState=todoFunctions.addTodo(state,inPut);
-      console.log(newState);
-      update(newState);
+      if (inPut != "") {
+        var newState=todoFunctions.addTodo(state,inPut);
+        update(newState);
+      }
     });
   }
 
