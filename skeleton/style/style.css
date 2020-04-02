@@ -42,6 +42,7 @@
     font-weight: bold;
     user-select: none;
     border-radius:50px;
+    overflow:auto;
     
 }
 
@@ -89,7 +90,7 @@ p {
 } 
 
 #Animalinput {
-    margin-left: 25px;
+    margin-left: 20px;
     margin-top: 10px;
     
 }
