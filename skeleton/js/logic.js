@@ -24,12 +24,15 @@ var todoFunctions = {
   },
 
   addTodo: function (todos, newTodo) {
-
-    var newarr = this.cloneArrayOfObjects(todos);
-    let id1 = this.generateId();
-    newObj = { id: id1, description:newTodo, done:false }
-    newarr.push(newObj);
-    return  this.sortTodos(newarr);
+    var newarr2 = this.cloneArrayOfObjects(todos);
+    if (!checkdup(newarr2, newTodo)) {
+      var newarr = this.cloneArrayOfObjects(todos);
+      let id1 = this.generateId();
+      newObj = { id: id1, description: newTodo, done: false }
+      newarr.push(newObj);
+      return this.sortTodos(newarr);
+    }
+return todos;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
@@ -61,23 +64,39 @@ var todoFunctions = {
     return newarr;
 
   },
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // in the new todo array, all elements will remain unchanged except the one with id: idToMark
-    // this element will have its done value toggled
-    // hint: array.map
+  // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+  // in the new todo array, all elements will remain unchanged except the one with id: idToMark
+  // this element will have its done value toggled
+  // hint: array.map
   sortTodos: function (todos, sortFunction) {
-       var newarr=this.cloneArrayOfObjects(todos)
-      newarr=newarr.sort(sortFunction);
-      return newarr;
+    var newarr = this.cloneArrayOfObjects(todos)
+    newarr = newarr.sort(sortFunction);
+    return newarr;
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
   },
 };
+function checkdup(todos, newstr) {
+  
+  var newstr=newstr.toUpperCase();
+  console.log("checkfunc");
+  return todos.filter(function(val){
+    return val.description.toUpperCase()==(newstr);
+  }).length>0;
 
-function sortFunction(a,b)
-{ return (a.description < b.description ); }
+
+}
+//todos.description.toUpperCase
+//if(todos.includes(newstr))
+// {
+//  return true;
+//}
+//  return false;
+
+
+function sortFunction(a, b) { return (a.description < b.description); }
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
 // See this article for more details: 
